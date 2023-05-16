@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3589E44C2A1404E30014643F /* SearchMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3589E44B2A1404E30014643F /* SearchMap.swift */; };
+		3589E44E2A142ED50014643F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3589E44D2A142ED50014643F /* README.md */; };
+		35A64B682A0DFF6400AE2DC9 /* ChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A64B672A0DFF6400AE2DC9 /* ChannelsView.swift */; };
 		35A75A212A0B39E10032CEFB /* TermProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A75A202A0B39E10032CEFB /* TermProjectApp.swift */; };
 		35A75A232A0B39E10032CEFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A75A222A0B39E10032CEFB /* ContentView.swift */; };
 		35A75A252A0B39E30032CEFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A75A242A0B39E30032CEFB /* Assets.xcassets */; };
@@ -14,6 +17,8 @@
 		35A75A322A0B39E30032CEFB /* TermProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A75A312A0B39E30032CEFB /* TermProjectTests.swift */; };
 		35A75A3C2A0B39E30032CEFB /* TermProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A75A3B2A0B39E30032CEFB /* TermProjectUITests.swift */; };
 		35A75A3E2A0B39E30032CEFB /* TermProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A75A3D2A0B39E30032CEFB /* TermProjectUITestsLaunchTests.swift */; };
+		35A75A4B2A0B3A090032CEFB /* RadioMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A75A4A2A0B3A090032CEFB /* RadioMap.swift */; };
+		35FC8EFD2A0CC9850058B33B /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC8EFC2A0CC9850058B33B /* RadioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3589E44B2A1404E30014643F /* SearchMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMap.swift; sourceTree = "<group>"; };
+		3589E44D2A142ED50014643F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		35A64B672A0DFF6400AE2DC9 /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
 		35A75A1D2A0B39E10032CEFB /* TermProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A75A202A0B39E10032CEFB /* TermProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermProjectApp.swift; sourceTree = "<group>"; };
 		35A75A222A0B39E10032CEFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +52,9 @@
 		35A75A372A0B39E30032CEFB /* TermProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TermProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A75A3B2A0B39E30032CEFB /* TermProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermProjectUITests.swift; sourceTree = "<group>"; };
 		35A75A3D2A0B39E30032CEFB /* TermProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		35A75A4A2A0B3A090032CEFB /* RadioMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioMap.swift; sourceTree = "<group>"; };
+		35A75A4C2A0BA7D50032CEFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		35FC8EFC2A0CC9850058B33B /* RadioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +85,7 @@
 		35A75A142A0B39E10032CEFB = {
 			isa = PBXGroup;
 			children = (
+				3589E44D2A142ED50014643F /* README.md */,
 				35A75A1F2A0B39E10032CEFB /* TermProject */,
 				35A75A302A0B39E30032CEFB /* TermProjectTests */,
 				35A75A3A2A0B39E30032CEFB /* TermProjectUITests */,
@@ -94,10 +106,15 @@
 		35A75A1F2A0B39E10032CEFB /* TermProject */ = {
 			isa = PBXGroup;
 			children = (
+				35A75A4C2A0BA7D50032CEFB /* Info.plist */,
 				35A75A202A0B39E10032CEFB /* TermProjectApp.swift */,
+				3589E44B2A1404E30014643F /* SearchMap.swift */,
 				35A75A222A0B39E10032CEFB /* ContentView.swift */,
+				35A64B672A0DFF6400AE2DC9 /* ChannelsView.swift */,
+				35FC8EFC2A0CC9850058B33B /* RadioPlayer.swift */,
 				35A75A242A0B39E30032CEFB /* Assets.xcassets */,
 				35A75A262A0B39E30032CEFB /* Preview Content */,
+				35A75A4A2A0B3A090032CEFB /* RadioMap.swift */,
 			);
 			path = TermProject;
 			sourceTree = "<group>";
@@ -231,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3589E44E2A142ED50014643F /* README.md in Resources */,
 				35A75A282A0B39E30032CEFB /* Preview Assets.xcassets in Resources */,
 				35A75A252A0B39E30032CEFB /* Assets.xcassets in Resources */,
 			);
@@ -257,6 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3589E44C2A1404E30014643F /* SearchMap.swift in Sources */,
+				35FC8EFD2A0CC9850058B33B /* RadioPlayer.swift in Sources */,
+				35A75A4B2A0B3A090032CEFB /* RadioMap.swift in Sources */,
+				35A64B682A0DFF6400AE2DC9 /* ChannelsView.swift in Sources */,
 				35A75A232A0B39E10032CEFB /* ContentView.swift in Sources */,
 				35A75A212A0B39E10032CEFB /* TermProjectApp.swift in Sources */,
 			);
@@ -417,13 +439,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TermProject/Preview Content\"";
+				DEVELOPMENT_TEAM = FQKQPCHV9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TermProject/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location data to provide you with location-based services, such as finding nearby restaurants and navigating to them";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,13 +471,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TermProject/Preview Content\"";
+				DEVELOPMENT_TEAM = FQKQPCHV9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TermProject/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location data to provide you with location-based services, such as finding nearby restaurants and navigating to them";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

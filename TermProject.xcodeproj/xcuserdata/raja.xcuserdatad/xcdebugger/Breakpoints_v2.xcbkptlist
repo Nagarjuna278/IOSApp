@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "865AE997-EA2A-4DDC-B7E7-FEBE56164CF4"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CF3D930-595E-4CE8-B39F-A5404D214F74"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TermProject/ChannelsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getChannels(placeId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5CF3D930-595E-4CE8-B39F-A5404D214F74 - 4ea0b2b03205e971"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "360">
+               </Location>
+               <Location
+                  uuid = "5CF3D930-595E-4CE8-B39F-A5404D214F74 - ad1747d3f8462a8e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "1088">
+               </Location>
+               <Location
+                  uuid = "5CF3D930-595E-4CE8-B39F-A5404D214F74 - 4ea0b2b03205e990"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "360">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9EAF958A-8D91-4A53-B1DD-BEF58BA0AE6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TermProject/ChannelsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "getChannels(placeId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9EAF958A-8D91-4A53-B1DD-BEF58BA0AE6A - 537db8a80d7ee862"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "584">
+               </Location>
+               <Location
+                  uuid = "9EAF958A-8D91-4A53-B1DD-BEF58BA0AE6A - 537db8a80d7ee862"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F158B0A-5A6F-47E2-BBC1-5D5366DDFF3B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TermProject/ChannelsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "getChannels(placeId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8F158B0A-5A6F-47E2-BBC1-5D5366DDFF3B - 4ea0b2b032051637"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "620">
+               </Location>
+               <Location
+                  uuid = "8F158B0A-5A6F-47E2-BBC1-5D5366DDFF3B - 4ea0b2b032051637"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "8F158B0A-5A6F-47E2-BBC1-5D5366DDFF3B - 537db8a80d7ee8cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30EC42E5-F2D0-4BC3-A5E3-03C083E0917A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TermProject/ChannelsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "getChannels(placeId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "30EC42E5-F2D0-4BC3-A5E3-03C083E0917A - 537db8a80d7ee841"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "30EC42E5-F2D0-4BC3-A5E3-03C083E0917A - 537db8a80d7ee841"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "584">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "442D8E0A-B8FA-40FD-96D4-7E8E87EA094B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TermProject/ChannelsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "getChannels(placeId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "442D8E0A-B8FA-40FD-96D4-7E8E87EA094B - 4ea0b2b032051637"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "620">
+               </Location>
+               <Location
+                  uuid = "442D8E0A-B8FA-40FD-96D4-7E8E87EA094B - 4ea0b2b032051656"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TermProject.ChannelsViewAPI.getChannels(placeId: Swift.String, completion: (TermProject.LocalRegion) -&gt; ()) -&gt; ()"
+                  moduleName = "TermProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nagarjuna/TermProject/TermProject/ChannelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "620">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
