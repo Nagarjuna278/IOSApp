@@ -100,3 +100,4 @@ Once the map displays all the coordinates where there are one or multiple radio 
 If a user wants to jump to a specific location, they can search for the place using the search bar at the top.
 
 
+
