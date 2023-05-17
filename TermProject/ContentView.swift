@@ -4,47 +4,54 @@ import AVFoundation
 
 struct ContentView: View {
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40, longitude: 120), span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+    //Map Visible region
+    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40, longitude: 120), span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+    
+    //fetchPlacesAPI to get the locations
     @StateObject private var placesAPI = PlacesAPI()
     @State private var coords = [Place.Data.Coord]()
     
+    //Channels of a particular location
     @StateObject private var channelsView = ChannelsViewAPI()
-    
     @State private var channelsData : [String : LocalRegion.Data] = [:]
     
+    //MapViewDelegate
     private let mapViewDelegate = MapViewDelegate()
     
+    //RadioPlayer for a particular channel
     @StateObject private var radioplayer = RadioPlayer()
-    
     @State private var player : AVPlayer?
+    @State private var playerItem: AVPlayerItem?
     
+    //Variables to keep the track of radio station of a particular location
     @State private var channelList : [String: Int] = [:]
     @State private var MaxChannelList : [String : Int] = [:]
     
-    @State private var playerItem: AVPlayerItem?
     
+    //nearest coordinate to play on the startup
     @State private var nearestCoordinate : Place.Data.Coord? = nil
     
+    //current coord of the radiostation playing
     @State private var currentCoord: Place.Data.Coord? = nil
     
+    //Information to display the current radioStatoin content
     @State private var is_playing : Bool = false
     @State private var pause_station : Bool = false
-    
     @State private var currentPlace : String = ""
-    
     @State var currentTitle : String = ""
-    
     @State var currentItemId : String = ""
     
+    //used for search function
     @State var isSelected : Bool = false
     @State var search : Bool = false
-    
     @State private var searchText = ""
     @StateObject private var searchMap = SearchResultsViewModel()
 
     
     @State private var coordscopy = [Place.Data.Coord]()
+    
     var body: some View {
+        //search bar
         HStack(alignment: .top){
             if search {
                 NavigationView {
@@ -73,7 +80,7 @@ struct ContentView: View {
                             }
                         })
                 }
-                .frame(height: searchText.isEmpty ? 100 : .infinity)
+                .frame(height: searchText.isEmpty ? 100 : 3000)
             } else {
                 Text("Search for places")
             }
@@ -82,10 +89,8 @@ struct ContentView: View {
                 .onTapGesture {
                     search.toggle()
                 }
-                //.frame(alignment: .topTrailing)
-        
         }
-        
+        //Map
         ZStack(alignment: .bottom) {
             Map(coordinateRegion: $region, annotationItems: coords) { item in
                 //Marks the elements in coords on the map
@@ -184,29 +189,37 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
     }
     
+    //To play the next Station
     private func nextRadioStation(){
         stopRadio()
         channelList[currentItemId] = ((channelList[currentItemId] ?? 0 )+1) % (MaxChannelList[currentItemId] ?? 1)
         playRadio()
     }
     
+    //previous Station of current location
     private func prevRadioStation(){
         stopRadio()
-        channelList[currentItemId] = ((channelList[currentItemId] ?? 0 )-1) % (MaxChannelList[currentItemId] ?? 1)
+        if channelList[currentItemId] == 0 {
+            channelList[currentItemId] = MaxChannelList[currentItemId]!-1
+        } else {
+            channelList[currentItemId] = channelList[currentItemId]! - 1
+        }
         playRadio()
     }
     
-    
+    //pause the current radio station
     private func pauseRadio(){
         player?.pause()
         pause_station = true
     }
     
+    //play the current radio station
     private func pauseAndPlay(){
         player?.play()
         pause_station = false
     }
     
+    //stop the current radio station
     private func stopRadio(){
         isSelected = false
         player?.seek(to: CMTime.zero)
@@ -215,8 +228,10 @@ struct ContentView: View {
         pause_station = false
     }
     
+    //play the radio
     private func playRadio(){
         stopRadio()
+        print(currentItemId)
         let substr : String = channelsData[currentItemId]!.content.first?.items[channelList[currentItemId] ?? 0].href.components(separatedBy: "/").last ?? ""
         
         currentTitle = channelsData[currentItemId]?.content.first?.items[channelList[currentItemId] ?? 0].title ?? ""
@@ -230,40 +245,32 @@ struct ContentView: View {
         pause_station = false
     }
     
+    //OnTap playing a location radio
     private func handleTapOnMap(item : Place.Data.Coord) {
         
-        
         channelList[item.id] = 0
-        
         currentPlace = item.title
-        
         player?.seek(to: CMTime.zero)
         player?.pause()
 
         channelsView.getChannels(placeId: item.id) { localRegion in
             print(localRegion, " handleTap")
             channelsData[item.id] = localRegion.data;
-            
             currentItemId = item.id;
-            
             region.center = CLLocationCoordinate2D(latitude: item.geo[1], longitude: item.geo[0])
-            
             MaxChannelList[currentItemId] = localRegion.data.count
-            
             playRadio()
-            
             isSelected = true
-            
         }
         
         
     }
     
-    
+    //fetches the places and plots the coordinates on the map
     private func fetchPlaces() {
-        let map = MKMapView.appearance()
-                        //map.cameraZoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 1000000)
         
+        let map = MKMapView.appearance()
+                        
         placesAPI.getGeo { geo in
             region.center = CLLocationCoordinate2D(latitude: geo.latitude, longitude: geo.longitude)
         }
@@ -277,14 +284,13 @@ struct ContentView: View {
         
     }
     
+    //Finds the coordinate which is nearest to the region center
     private func showMinDistance() {
         
         var shortestDistance: CLLocationDistance = Double.infinity
         
         if(coords.count>0){
-            
             nearestCoordinate = coords.first
-            
             for coord in coords {
                 let distance = CLLocation(latitude: region.center.latitude, longitude: region.center.longitude).distance(from: CLLocation(latitude: coord.geo[1], longitude: coord.geo[0]))
                 
@@ -302,6 +308,7 @@ struct ContentView: View {
         }
     }
     
+    //Filtering the coordinates which are only visible
     private func filterVisibleCoords() {
         let maxLat = region.center.latitude + region.span.latitudeDelta / 2
         let minLat = region.center.latitude - region.span.latitudeDelta / 2
@@ -315,6 +322,7 @@ struct ContentView: View {
             return (minLat...maxLat).contains(lat) && (minLon...maxLon).contains(lon)
         }
         
+        //sorting the coordinates based on the distance from the center
         coords = coords.sorted(by: { coord1, coord2 in
             let center = CLLocation(latitude: region.center.latitude, longitude: region.center.longitude)
             let coord1Location = CLLocation(latitude: coord1.geo[1], longitude: coord1.geo[0])
@@ -324,7 +332,7 @@ struct ContentView: View {
          
         
         
-        
+        //taking the 15 coordinates from the center and the remaining 35 random coordinates
         if coords.count>50 {
             let randomcoords = Array(coords.suffix(coords.count - 15).shuffled().prefix(35))
             coords.remove(atOffsets: IndexSet(integersIn: 15...coords.count))
