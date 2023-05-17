@@ -96,7 +96,7 @@ struct ContentView: View {
     }
     
     
-    
+    //Search View
     var searchMapView: some View {
         HStack(alignment: .top){
             if search {
@@ -131,14 +131,18 @@ struct ContentView: View {
             }
             if !search {
     
-                Text("Search Places")
-                    .font(.system(size: 22)).bold()
-                    .padding(.horizontal).padding().frame(width: 300)
-                    .background(.black).opacity(0.5)
-                    .foregroundColor(.white)
-                    .onTapGesture {
-                        search = true
-                    }
+                Button {
+                    search = true
+                } label: {
+                    Text("Search Places")
+                        .font(.system(size: 22)).bold()
+                        .padding(.horizontal).padding().frame(width: 300)
+                        .foregroundColor(.black)
+                    Image(systemName: "magnifyingglass")
+                        .font(.system(size: 22)).bold()
+                }
+                .background(.white).opacity(0.6)
+
             }
         }
     }
@@ -205,8 +209,6 @@ struct ContentView: View {
             }
             ZStack{
                 searchMapView
-                    .cornerRadius(5)
-                    .foregroundColor(.black)
                     .cornerRadius(20)
                     .padding(.top).padding(40)
             }
