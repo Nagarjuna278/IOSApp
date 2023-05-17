@@ -162,7 +162,6 @@ struct ContentView: View {
                             handleTapOnMap(item: item)
                         }){
                             Image(systemName: "mappin")
-                                .resizable()
                                 .frame(width: 10, height: 20)
                                 .foregroundColor(.red)
                         }
@@ -195,7 +194,6 @@ struct ContentView: View {
                             }
                             .padding(.bottom).padding(10)
                             Spacer(minLength: 5)
-                                .foregroundColor(.white)
                             
                             radioView
                             
@@ -259,14 +257,10 @@ struct ContentView: View {
     //play the radio
     private func playRadio(){
         stopRadio()
-        print(currentItemId)
         let substr : String = channelsData[currentItemId]!.content.first?.items[channelList[currentItemId] ?? 0].href.components(separatedBy: "/").last ?? ""
         
         currentTitle = channelsData[currentItemId]?.content.first?.items[channelList[currentItemId] ?? 0].title ?? ""
         
-        print(currentTitle)
-        print(currentItemId)
-        print(channelsData[currentItemId]?.count ?? 0)
         player = radioplayer.getRadioStation(stationId: substr)
         player?.play()
         is_playing = true
@@ -282,7 +276,6 @@ struct ContentView: View {
         player?.pause()
 
         channelsView.getChannels(placeId: item.id) { localRegion in
-            print(localRegion, " handleTap")
             channelsData[item.id] = localRegion.data;
             currentItemId = item.id;
             region.center = CLLocationCoordinate2D(latitude: item.geo[1], longitude: item.geo[0])
@@ -369,7 +362,6 @@ struct ContentView: View {
             }
         }
         
-        print(coords.count)
     }
 }
 
