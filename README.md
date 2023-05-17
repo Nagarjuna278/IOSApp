@@ -22,6 +22,14 @@ The project consists of the following files:
 - SearchMap.swift
 - TermProjectApp.swift
 
+
+##Algorithm:
+    
+-    Displays only the coordinates which are in Visible region.
+-    Displays the nearest 15 coordinates in the Map Visible Region and 35 random coordinates on the Visible region
+-    On Startup, the algorithm chooses the coordinate which is nearest to the center and plays the available radioStations 
+
+
 RadioMap.swift : 
 
     Geo struct: Represents geographical information obtained from a JSON response. It includes properties such as eu, country_code, region_code, latitude, longitude, and city. It adopts the Decodable and Identifiable protocols.

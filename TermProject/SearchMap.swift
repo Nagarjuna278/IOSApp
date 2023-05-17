@@ -3,6 +3,8 @@ import MapKit
 
 struct SearchMap : Identifiable {
     
+    
+    
     let id=UUID()
     private var mapItem: MKMapItem
     
@@ -15,9 +17,13 @@ struct SearchMap : Identifiable {
     var name: String {
         mapItem.name ?? ""
     }
+    
+    
 }
 
 class SearchResultsViewModel: ObservableObject {
+    
+    @Published var searchText: String = ""
     
     @Published var searchPlaces = [SearchMap]()
     @Published var region = MKCoordinateRegion()
@@ -29,12 +35,17 @@ class SearchResultsViewModel: ObservableObject {
         
         let search = MKLocalSearch(request: searchRequest)
         
-        search.start { response, error in
+        search.start { [weak self] response, error in
             guard let response = response else {
                 print("Error: \(error?.localizedDescription ?? "Unkonown error")")
                 return
             }
-            
+            guard let self = self else {
+                return
+            }
+            guard !self.searchText.isEmpty else {
+                return
+            }
             self.searchPlaces = response.mapItems.map(SearchMap.init)
         }
     }

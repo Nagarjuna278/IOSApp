@@ -44,146 +44,172 @@ struct ContentView: View {
     //used for search function
     @State var isSelected : Bool = false
     @State var search : Bool = false
-    @State private var searchText = ""
-    @StateObject private var searchMap = SearchResultsViewModel()
+//    @State private var searchText = ""
+    @StateObject private var searchMapViewModel = SearchResultsViewModel()
 
     
     @State private var coordscopy = [Place.Data.Coord]()
     
-    var body: some View {
-        //search bar
+    
+    var radioView: some View {
+        HStack {
+            Button(action : {
+                prevRadioStation()
+            }){
+                Image(systemName: "backward.frame.fill")
+                    .font(.system(size: 28))
+                    .foregroundColor(.white)
+                    
+            }
+            if pause_station == false {
+                Button(action : {
+                    pauseRadio()
+                }){
+                    Image(systemName: "pause.fill")
+                        .font(.system(size: 28))
+                        .foregroundColor(.white)
+                }
+            } else {
+                Button(action : {
+                    pauseAndPlay()
+                }){
+                    Image(systemName: "play.fill")
+                        .font(.system(size: 28))
+                        .foregroundColor(.white)
+                }
+            }
+            Button(action: {
+                stopRadio()
+            }){
+                Image(systemName: "square.fill")
+                    .font(.system(size: 28))
+                    .foregroundColor(.white)
+            }
+            Button(action : {
+                nextRadioStation()
+            }){
+                Image(systemName: "forward.frame.fill")
+                    .font(.system(size: 28))
+                    .foregroundColor(.white)
+            }
+        }
+    }
+    
+    
+    
+    var searchMapView: some View {
         HStack(alignment: .top){
             if search {
-                NavigationView {
+                NavigationStack {
                     ZStack{
-                        if searchMap.searchPlaces.isEmpty {
-                            
-                        } else {
-                            List(searchMap.searchPlaces) { place in
+                        if search {
+                            List(searchMapViewModel.searchPlaces) { place in
                                 Text(place.name)
                                     .onTapGesture {
                                         region.center = place.center
-                                        searchMap.searchPlaces = []
+                                        searchMapViewModel.searchPlaces = []
                                         search = false
                                     }
                             }
                         }
-                    }.searchable(text: $searchText)
-                        .onChange(of: searchText, perform: { searchText in
+                    }
+                    .searchable(text: $searchMapViewModel.searchText)
+                    .onChange(of: searchMapViewModel.searchText, perform: { searchText in
+                        
+                        if !searchText.isEmpty {
+                            searchMapViewModel.search(text: searchText, region: region)
                             
-                            if !searchText.isEmpty {
-                                searchMap.search(text: searchText, region: region)
-                                
-                            } else {
-                                searchMap.searchPlaces = []
-                                search = false
-                            }
-                        })
-                }
-                .frame(height: searchText.isEmpty ? 100 : 3000)
-            } else {
-                Text("Search for places")
-            }
-            
-            Image(systemName: "magnifyingglass")
-                .onTapGesture {
-                    search.toggle()
-                }
-        }
-        //Map
-        ZStack(alignment: .bottom) {
-            Map(coordinateRegion: $region, annotationItems: coords) { item in
-                //Marks the elements in coords on the map
-                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: item.geo[1], longitude: item.geo[0])) {
-                    // created a button
-                    Button(action: {
-                        handleTapOnMap(item: item)
-                    }){
-                        Image(systemName: "mappin")
-                            .resizable()
-                            .frame(width: 10, height: 20)
-                            .foregroundColor(.red)
-                    }
-                    //Text("\(item.title) \(item.id)")
-                }
-            }
-            .onAppear{
-                fetchPlaces()
-            }
-            .onChange(of: region) { _ in
-                filterVisibleCoords()
-                print(isSelected)
-                searchMap.searchPlaces = []
-                print(searchMap.searchPlaces)
-            }
-            .ignoresSafeArea()
-            .tint(.blue)
-            
-            if is_playing {
-                RoundedRectangle(cornerRadius: 20)
-                    .fill().opacity(0.5)
-                    .foregroundColor(.black)
-                    .frame(height: 180)
-                    .edgesIgnoringSafeArea(.all)
-            }
-            VStack {
-                if is_playing {
-                    VStack{
-                        Text("\(currentTitle)")
-                            .font(.system(size: 28))
-                        Text("\(currentPlace)")
-                    }
-                    .padding(.bottom).padding(10)
-                    Spacer(minLength: 5)
-                    .foregroundColor(.white)
-                    HStack {
-                        Button(action : {
-                            prevRadioStation()
-                        }){
-                            Image(systemName: "backward.frame.fill")
-                                .font(.system(size: 28))
-                                .foregroundColor(.white)
-                                
-                        }
-                        if pause_station == false {
-                            Button(action : {
-                                pauseRadio()
-                            }){
-                                Image(systemName: "pause.fill")
-                                    .font(.system(size: 28))
-                                    .foregroundColor(.white)
-                            }
                         } else {
-                            Button(action : {
-                                pauseAndPlay()
-                            }){
-                                Image(systemName: "play.fill")
-                                    .font(.system(size: 28))
-                                    .foregroundColor(.white)
-                            }
+                            searchMapViewModel.searchPlaces = []
+                            search = false
                         }
-                        Button(action: {
-                            stopRadio()
-                        }){
-                            Image(systemName: "square.fill")
-                                .font(.system(size: 28))
-                                .foregroundColor(.white)
-                        }
-                        Button(action : {
-                            nextRadioStation()
-                        }){
-                            Image(systemName: "forward.frame.fill")
-                                .font(.system(size: 28))
-                                .foregroundColor(.white)
-                        }
-                    }
-                    
+                    })
                 }
+                .frame(height: searchMapViewModel.searchPlaces.isEmpty ? 100 : 400)
+                .navigationTitle("Search Places")
+                //.frame(height: searchText.isEmpty ? 100 : .infinity )
             }
-            .frame(height : 100)
-            .padding(.bottom).padding(40)
-            .edgesIgnoringSafeArea(.all)
-            
+            if !search {
+    
+                Text("Search Places")
+                    .font(.system(size: 22)).bold()
+                    .padding(.horizontal).padding().frame(width: 300)
+                    .background(.black).opacity(0.5)
+                    .foregroundColor(.white)
+                    .onTapGesture {
+                        search = true
+                    }
+            }
+        }
+    }
+    
+    
+    var body: some View {
+        
+        
+        //Map
+        ZStack(alignment: .top){
+            ZStack(alignment: .bottom) {
+                Map(coordinateRegion: $region, annotationItems: coords) { item in
+                    //Marks the elements in coords on the map
+                    MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: item.geo[1], longitude: item.geo[0])) {
+                        // A button to click on the location to start the radio
+                        Button(action: {
+                            handleTapOnMap(item: item)
+                        }){
+                            Image(systemName: "mappin")
+                                .resizable()
+                                .frame(width: 10, height: 20)
+                                .foregroundColor(.red)
+                        }
+                        //Text("\(item.title) \(item.id)")
+                    }
+                }
+                .onAppear{
+                    fetchPlaces()
+                }
+                .onChange(of: region) { _ in
+                    filterVisibleCoords()
+                }
+                .ignoresSafeArea()
+                .tint(.blue)
+                
+                
+                if is_playing {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill().opacity(0.5)
+                            .foregroundColor(.black)
+                            .frame(height: 180)
+                            .edgesIgnoringSafeArea(.all)
+                        
+                        VStack {
+                            VStack{
+                                Text("\(currentTitle)")
+                                    .font(.system(size: 28))
+                                Text("\(currentPlace)")
+                            }
+                            .padding(.bottom).padding(10)
+                            Spacer(minLength: 5)
+                                .foregroundColor(.white)
+                            
+                            radioView
+                            
+                        }
+                        .frame(height : 100)
+                        //                    .padding(.bottom).padding(40)
+                        .edgesIgnoringSafeArea(.all)
+                    }
+                }
+                
+            }
+            ZStack{
+                searchMapView
+                    .cornerRadius(5)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+                    .padding(.top).padding(40)
+            }
         }
         
         .edgesIgnoringSafeArea(.all)
